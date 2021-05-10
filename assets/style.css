@@ -10,11 +10,12 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  border: 3px solid maroon;
 
 }
 
 body {
-  font-family: sans-serif;
+  font-family:monospace;
   background-color: black;
 }
 
@@ -25,6 +26,8 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
   text-align: center;
   padding: 20px;
   padding-top: 0px;
@@ -35,6 +38,7 @@ header {
   background-color: darkslategray;
   border-radius: 5px;
   border-width: 1px;
+  border: 2px solid maroon;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: maroon;
   font-size: 18px;

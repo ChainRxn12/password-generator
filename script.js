@@ -18,10 +18,6 @@ var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = [" ", "!", "", "#", "$", "%", "&", "'", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "~", "{", "}", "|"];
   console.log(specialChar);
 
-  
-
-
-
 
 
 // Write password to the #password input
@@ -33,5 +29,15 @@ function writePassword() {
 
 }
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//beginning of prompts
+function generatePassword(){
+  selectPasswordLength = prompt("How long would you like your password to be?  Please choose between 8-128 characters...");
+} console.log("Select password length" + selectPasswordLength);
+
+if (!selectPasswordLength){
+  alert("Please Enter a Value");
+}

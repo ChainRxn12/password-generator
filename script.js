@@ -40,4 +40,16 @@ function generatePassword(){
 
 if (!selectPasswordLength){
   alert("Please Enter a Value");
+
+//password length less than 8 or greater than 128)
+} else if (selectPasswordLength < 8 || selectPasswordLength > 128){
+  selectPasswordLength = prompt ("Choose between 8 and 128");
+  console.log("Password length" + selectPasswordLength);
+
+
+  //select lowercase, uppercase, special characters, and numbers
+} else {
+  selectLowerCase = confirm("Add lower case letters to password?");
+  console.log("Lower Case Letters " + selectLowerCase);
+  
 }

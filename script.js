@@ -134,7 +134,7 @@ var blankPassword = [];
 
 //for loop to create random passwords with variables selected
 for (var i = 0;  i < selectPasswordLength; i++){
-  var allChoices = selectChoices[math.floor(math.random() * selectChoices.length)];
+  var allChoices = selectChoices[Math.floor(Math.random() * selectChoices.length)];
   blankPassword.push(allChoices);
   console.log(allChoices);
 }

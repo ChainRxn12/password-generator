@@ -19,8 +19,6 @@ var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = [" ", "!", "", "#", "$", "%", "&", "'", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "~", "{", "}", "|"];
   console.log(specialChar);
 
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -30,14 +28,13 @@ function writePassword() {
 
 }
 
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 //beginning of prompts 
-function generatePassword(){
+function generatePassword() {
   selectPasswordLength = prompt("How long would you like your password to be?  Please choose between 8-128 characters...");
-} console.log("Select password length" + selectPasswordLength);
+  console.log("Select password length" + selectPasswordLength);
 
 if (!selectPasswordLength){
   alert("Select the Generate Password Button");
@@ -60,7 +57,7 @@ if (!selectPasswordLength){
   console.log("Special Characters" + selectSpecialChar);
   
 };
-// if no variables are selected/false
+// if no password variables are selected/false
 if (!selectLowerCase && !selectUpperCase && !selectNumber && !selectSpecialChar){
   selectChoices = alert("Please choose criteria to create password!");
  // All variables are selected/true
@@ -69,7 +66,7 @@ if (!selectLowerCase && !selectUpperCase && !selectNumber && !selectSpecialChar)
   selectChoices = lowerCase.concat(upperCase, numbers, specialChar);
   console.log(selectChoices);
 }
-// 3 of the variables are selectet/ true
+// 3 of the password variables are selected/ true
 else if (selectLowerCase && selectUpperCase && selectNumber){
   selectChoices = lowerCase.concat(upperCase, numbers);
   console.log(selectChoices);
@@ -78,12 +75,73 @@ else if (selectLowerCase && selectUpperCase && selectSpecialChar){
   selectChoices = lowerCase.concat(upperCase, specialChar);
   console.log(selectChoices);
 }
-else if (selectLowerCase && selectUpperCase && selectNumber){
-  selectChoices = lowerCase.concat(upperCase, numbers);
+else if (selectLowerCase && selectNumber && selectSpecialChar){
+  selectChoices = lowerCase.concat(numbers, specialChar);
   console.log(selectChoices);
 }
-else if (selectLowerCase && selectUpperCase && selectNumber){
-  selectChoices = lowerCase.concat(upperCase, numbers);
+else if (selectUpperCase && selectNumber && selectSpecialChar){
+  selectChoices = upperCase.concat(numbers, specialChar);
   console.log(selectChoices);
 }
 
+// 2 of the password variables are selected/ true
+
+else if (selectLowerCase && selectUpperCase){
+  selectChoices = lowerCase.concat(upperCase);
+  console.log(selectChoices);
+}
+else if (selectLowerCase && selectNumber){
+  selectChoices = lowerCase.concat(numbers);
+  console.log(selectChoices);
+}
+else if (selectLowerCase && selectSpecialChar){
+  selectChoices = lowerCase.concat(specialChar);
+}
+else if (selectUpperCase && selectNumber){
+  selectChoices = upperCase.concat(numbers);
+  console.log(selectChoices);
+}
+else if (selectUpperCase && selectSpecialChar){
+  selectChoices = upperCase.concat(specialChar);
+  console.log(selectChoices);
+}
+else if (selectNumber && selectSpecialChar){
+  selectChoices = numbers.concat(specialChar);
+  console.log(selectChoices);
+}
+
+// 1 of the password variables are selected / true
+
+else if (selectLowerCase){
+  selectChoices = lowerCase;
+  console.log(selectChoices);
+}
+else if (selectUpperCase){
+  selectChoices = upperCase;
+  console.log(selectChoices);
+}
+else if (selectSpecialChar){
+  selectChoices = specialCharl
+  console.log(selectChoices);
+}
+else if (selectNumber){
+  selectChoices = numbers;
+  console.log(selectChoices);
+} 
+
+//assign empty variable for the length of the password
+var blankPassword = [];
+
+//for loop to create random passwords with variables selected
+for (var i = 0;  i < selectPasswordLength; i++){
+  var allChoices = selectChoices[math.floor(math.random() * selectChoices.length)];
+  blankPassword.push(allChoices);
+  console.log(allChoices);
+}
+
+//join and return password
+var password = blankPassword.join("");
+console.log("Your password is: " + password);
+return password;
+
+}

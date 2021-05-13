@@ -7,6 +7,7 @@ var selectLowerCase;
 var selectUpperCase;
 var selectNumber;
 var selectSpecialChar;
+var selectChoices;
 
 //creating arrays with variables with console logs
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -33,15 +34,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//beginning of prompts
+//beginning of prompts 
 function generatePassword(){
   selectPasswordLength = prompt("How long would you like your password to be?  Please choose between 8-128 characters...");
 } console.log("Select password length" + selectPasswordLength);
 
 if (!selectPasswordLength){
-  alert("Please Enter a Value");
+  alert("Select the Generate Password Button");
 
-//password length less than 8 or greater than 128)
+//password must be length less than 8 or greater than 128)
 } else if (selectPasswordLength < 8 || selectPasswordLength > 128){
   selectPasswordLength = prompt ("Choose between 8 and 128");
   console.log("Password length" + selectPasswordLength);
@@ -49,7 +50,40 @@ if (!selectPasswordLength){
 
   //select lowercase, uppercase, special characters, and numbers
 } else {
-  selectLowerCase = confirm("Add lower case letters to password?");
+  selectLowerCase = confirm("Do you want to add lower case letters to your password?");
   console.log("Lower Case Letters " + selectLowerCase);
+  selectUpperCase = confirm("Do you want to add upper case letters to your password?");
+  console.log("Upper Case Letters " + selectUpperCase);
+  selectNumber = confirm("Do you want to add numbers to your password?");
+  console.log("Numbers" + selectNumber);
+  selectSpecialChar = confirm("Do you want to add special characters to your password?");
+  console.log("Special Characters" + selectSpecialChar);
   
+};
+// if no variables are selected/false
+if (!selectLowerCase && !selectUpperCase && !selectNumber && !selectSpecialChar){
+  selectChoices = alert("Please choose criteria to create password!");
+ // All variables are selected/true
+}else if (selectLowerCase && selectUpperCase && selectNumber && selectSpecialChar){
+  //combine the arrays for lowercase, uppercase, numbers, and special characters
+  selectChoices = lowerCase.concat(upperCase, numbers, specialChar);
+  console.log(selectChoices);
 }
+// 3 of the variables are selectet/ true
+else if (selectLowerCase && selectUpperCase && selectNumber){
+  selectChoices = lowerCase.concat(upperCase, numbers);
+  console.log(selectChoices);
+}
+else if (selectLowerCase && selectUpperCase && selectSpecialChar){
+  selectChoices = lowerCase.concat(upperCase, specialChar);
+  console.log(selectChoices);
+}
+else if (selectLowerCase && selectUpperCase && selectNumber){
+  selectChoices = lowerCase.concat(upperCase, numbers);
+  console.log(selectChoices);
+}
+else if (selectLowerCase && selectUpperCase && selectNumber){
+  selectChoices = lowerCase.concat(upperCase, numbers);
+  console.log(selectChoices);
+}
+

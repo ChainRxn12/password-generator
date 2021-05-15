@@ -121,7 +121,7 @@ else if (selectUpperCase){
   console.log(selectChoices);
 }
 else if (selectSpecialChar){
-  selectChoices = specialChar
+  selectChoices = specialChar;
   console.log(selectChoices);
 }
 else if (selectNumber){

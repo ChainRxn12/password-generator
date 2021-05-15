@@ -14,7 +14,7 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
   console.log(lowerCase);
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   console.log(upperCase);
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   console.log(numbers);
 var specialChar = [" ", "!", "", "#", "$", "%", "&", "'", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "~", "{", "}", "|"];
   console.log(specialChar);

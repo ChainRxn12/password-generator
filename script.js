@@ -39,7 +39,7 @@ function generatePassword() {
 if (!selectPasswordLength){
   alert("Select the Generate Password Button");
 
-//password must be length less than 8 or greater than 128)
+//password cant be length less than 8 or greater than 128)
 } else if (selectPasswordLength < 8 || selectPasswordLength > 128){
   selectPasswordLength = prompt ("Choose between 8 and 128");
   console.log("Password length" + selectPasswordLength);
@@ -144,4 +144,12 @@ var password = blankPassword.join("");
 console.log("Your password is: " + password);
 return password;
 
+}
+
+//create function to copy password
+//credit code snippet from https://stackoverflow.com/questions/37658524/copying-text-of-textarea-in-clipboard-when-button-is-clicked/37659356
+function copy () {
+  var textArea = document.getElementById("password");
+  password.select();
+  document.execCommand("copy");
 }
